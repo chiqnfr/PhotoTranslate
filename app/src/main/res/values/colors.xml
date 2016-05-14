@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="result_minor_text">#ffc0c0c0</color>
+    <color name="result_text">#ffffffff</color>
+    <color name="result_view">#b0000000</color>
+    <color name="translation_text">#00ccff</color>
+    <color name="viewfinder_corners">#ffffffff</color>
+    <color name="viewfinder_frame">#ffd6d6d6</color>
+    <color name="viewfinder_mask">#60000000</color>
+</resources>

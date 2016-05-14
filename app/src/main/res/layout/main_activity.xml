@@ -1,0 +1,127 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <SurfaceView android:id="@+id/sv_camera_preview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"/>
+
+    <corbatodd.phototranslate.FocusBoxView
+        android:id="@+id/viewfinder_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#0000"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView android:id="@+id/source_language_text_view_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OCR Source"
+            android:textColor="@color/result_minor_text"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:paddingLeft="4dip"
+            android:paddingRight="4dip"/>
+
+        <TextView android:id="@+id/source_language_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/result_minor_text"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <RelativeLayout android:id="@+id/result_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/result_view"
+        android:visibility="gone"
+        android:padding="4dip">
+
+        <LinearLayout
+            android:id="@+id/layout_image"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="12dip">
+
+            <ImageView android:id="@+id/image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="300dip"
+                android:maxHeight="300dip"
+                android:layout_marginBottom="10dip"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OCR Result"
+                android:textColor="@color/translation_text"
+                android:textSize="15sp"
+                android:padding="5dip"/>
+
+            <TextView android:id="@+id/ocr_result_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/result_text"
+                android:textSize="22sp"
+                android:padding="5dip"
+                android:scaleType="centerInside"/>
+
+            <TextView
+                android:id="@+id/translation_language_label_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Translation"
+                android:textColor="@color/translation_text"
+                android:textSize="15sp"
+                android:padding="5dip"/>
+
+            <TextView android:id="@+id/translation_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/result_text"
+                android:textSize="22sp"
+                android:padding="5dip"
+                android:scaleType="centerInside"/>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/indeterminate_progress_indicator_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ProgressBar android:id="@+id/progress_small"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dip"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout android:id="@+id/camera_button_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <corbatodd.phototranslate.TakePictureButton
+            android:id="@+id/shutter_button"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:background="@drawable/shutter_button"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:layout_marginRight="2dip"
+            android:scaleType="center"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</FrameLayout>
+
