@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>List All Book</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+         
+    </head>
+    <body>
+        <h1>LIST BOOK</h1>
+        <a th:href="@{/save-book}">Add Book</a>
+        
+        <br/>
+        <br/>
+        
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Kind</th>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <th:block th:each="book : ${listBook}">
+                <tr>
+                    <td><p th:text="${book.id}"></p></td>
+                    <td><p th:text="${book.name}"></p></td>
+                    <td><p th:text="${book.author}"></p></td>                   
+                    <td><p th:text="${book.kind}"></p></td>
+                    <td><p th:text="${book.description}"></p></td>
+                    <td><p th:text="${book.quantity}"></p></td>
+                    <td><a th:href="@{/edit-book/} + ${book.id}">Edit</a></td>
+                    <td><a th:href="@{/deleteBook/} + ${book.id}">Delete</a></td>
+                </tr>
+            </th:block>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,4 @@
+com/chiqnfr/bookstore/models/BookModel.class
+com/chiqnfr/bookstore/repositories/BookRepository.class
+com/chiqnfr/bookstore/controllers/BookController.class
+com/chiqnfr/bookstore/BookstoreApplication.class

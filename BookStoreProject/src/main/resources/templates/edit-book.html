@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Edit Book</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    </head>
+    <body>
+        <a th:href="@{/list-book}">List Book</a><br />
+        <h1>Edit Book</h1>
+        <form th:action="@{/editBook}" method="POST" th:object="${book}">
+            Id: <input th:field="*{id}" readonly="true" /> 
+            <br/> <br/>
+            Name: <input th:field="*{name}"/> 
+            <br/> <br/>
+            Author: <input th:field="*{author}"/> 
+            <br/> <br/>
+            Kind: <input th:field="*{kind}"/> 
+            <br/> <br/>
+            Description: <input th:field="*{description}"/> 
+            <br/> <br/>
+            Quantity: <input th:field="*{quantity}"/> 
+            <br/> <br/>
+            
+            <input type="submit" value="Submit" />
+        </form>
+    </body>
+</html>
